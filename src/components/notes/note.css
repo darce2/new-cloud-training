@@ -1,0 +1,42 @@
+.note__content {
+    color: darkslategrey;
+    flex-grow: 1;
+    padding: 20px;
+    border: none;
+}
+
+.note__line {
+    border-top: 1px solid green;
+    width: 100%;
+    padding: 5px;
+    height: 1px;
+}
+
+.note__container {
+    background: #fff;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+    margin: 1rem;
+    width: 300px;
+    padding: 10px;
+}
+
+.note__title {
+    font-size: 16px;
+    background-color: darkcyan;
+    color: white;
+    width: 100%;
+    padding: 5px;
+}
+
+.note__btn {
+    border-color: lightsalmon;
+    border-radius: 2rem;
+    padding: 10px;
+    width: 80px;
+    height: 40px;;
+}

@@ -1,0 +1,18 @@
+.navbar__container {
+    display: flex;
+    background-color: #304051;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    width: 100%;;;
+  }
+
+  .count-bubble {
+    background-color: lightblue;
+    color: grey;
+    height: 50px;
+    width: 50px;
+  }
+  
