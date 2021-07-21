@@ -8,7 +8,7 @@ import "./note.css"
 const note = props => {
     const { content, handleContentChange, title, handleDeleteNote, index, handleTitleChange } = props;
     return (
-        <div className="note__container">
+        <div className="note__container" data-testid="note-element" >
             <ContentEditable
                 className={"note__title"}
                 // innerRef={this.contentEditable}
@@ -19,6 +19,7 @@ const note = props => {
             />
             <ContentEditable
                 className={"note__content"}
+                data-testid="note-content"
                 // innerRef={this.contentEditable}
                 html={content} // innerHTML of the editable div
                 // disabled={false}       // use true to disable editing

@@ -25,15 +25,21 @@ function App() {
 
       if (post > 0) {
 
-        const response = await axios.get("https://jsonplaceholder.typicode.com/posts/" + post)
-        
-        const {
-          data: { title, body },
-        } = response;
-        const newNotes = Array.from(notes);
-        newNotes.push({ title, content: body });
+        try {
+          const response = await axios.get("https://jsonplaceholder.typicode.com/posts/" + post)
+          console.log(response)
+          
+          const {
+            data: { title, body },
+          } = response;
+          const newNotes = Array.from(notes);
+          newNotes.push({ title, content: body });
+  
+          setNotes(newNotes);
+        } catch (e) {
+          // ignore
+        }
 
-        setNotes(newNotes);
       }
 
     };
@@ -86,7 +92,7 @@ function App() {
         <div className="links__container">
           <Link to="/page">NewPage</Link>
         </div>
-        <input value={post} className="input__postnumber" onChange={(e) => setPostNumber(e.target.value)} />
+        <input value={post} className="input__postnumber" data-testid="input__postnumber" onChange={(e) => setPostNumber(e.target.value)} />
         <button className="btn__add-note" onClick={handleNewNote}>
           Add Note
         </button>

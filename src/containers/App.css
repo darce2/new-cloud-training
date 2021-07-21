@@ -10,7 +10,10 @@
 
 .input__postnumber {
   width: 20%;
+}
 
+.links__container {
+  color: white;
 }
 
 .btn__add-note {
