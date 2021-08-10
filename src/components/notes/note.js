@@ -29,7 +29,6 @@ const note = props => {
             <div className="note__line" />
             <button className="note__btn" onClick={() => handleDeleteNote(index)}>Delete</button>
         </div>
-
     )
 }
 

@@ -32,7 +32,7 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('handles delete', () => {
+  it('handles title', () => {
     const wrapper = shallow(<Note {...props} />);
     wrapper.find(".note__title").simulate("change", { target: { value: "foo" }});
     expect(mockHandleTitleChange).toHaveBeenCalled();
@@ -47,7 +47,6 @@ describe('App', () => {
   it('handles delete', () => {
     const wrapper = shallow(<Note {...props} />);
     wrapper.find(".note__btn").simulate("click");
-    expect(mockHandleDeleteNote).toHaveBeenCalled();
+    expect(mockHandleDeleteNote).toHaveBeenCalledWith(5);
   });
-
 });
