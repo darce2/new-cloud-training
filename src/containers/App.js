@@ -7,16 +7,7 @@ import Notes from "../components/notes";
 import "./App.css";
 
 function App() {
-  const [notes, setNotes] = useState([
-    {
-      title: "Greeting",
-      content: "hi",
-    },
-    {
-      title: "Kewl",
-      content: "yo",
-    },
-  ]);
+  const [notes, setNotes] = useState([]);
   const [post, setPostNumber] = useState(1);
 
   useEffect(() => {

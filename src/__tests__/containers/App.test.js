@@ -26,7 +26,7 @@ describe("App", () => {
 
     userEvent.click(screen.getByText("Add Note"));
 
-    expect(screen.getAllByTestId("note-element").length).toEqual(3);
+    expect(screen.getAllByTestId("note-element").length).toEqual(1);
   });
 
   it('handleDeleteNote()', () => {
@@ -35,6 +35,9 @@ describe("App", () => {
         <App />
       </Router>
     );
+    
+    userEvent.click(screen.getByText("Add Note"));
+    userEvent.click(screen.getByText("Add Note"));
 
     userEvent.click(screen.getAllByText("Delete")[0]);
 
@@ -48,8 +51,10 @@ describe("App", () => {
       </Router>
     );
     
+    userEvent.click(screen.getByText("Add Note"));
+
     fireEvent.input(screen.getByTestId("input__postnumber"), {target: {value: '2'}})
 
     expect(axios.get).toHaveBeenCalledWith("https://jsonplaceholder.typicode.com/posts/2")
   });
-});q
+});
