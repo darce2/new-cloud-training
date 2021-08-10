@@ -11,29 +11,26 @@ function App() {
   const [post, setPostNumber] = useState(1);
 
   useEffect(() => {
-
-    async function fetchNotes(){
-
+    async function fetchNotes() {
       if (post > 0) {
-
         try {
-          const response = await axios.get("https://jsonplaceholder.typicode.com/posts/" + post)
-          console.log(response)
-          
+          const response = await axios.get(
+            "https://jsonplaceholder.typicode.com/posts/" + post
+          );
+          console.log(response);
+
           const {
             data: { title, body },
           } = response;
           const newNotes = Array.from(notes);
           newNotes.push({ title, content: body });
-  
+
           setNotes(newNotes);
         } catch (e) {
           // ignore
         }
-
       }
-
-    };
+    }
 
     fetchNotes();
   }, [post]);
@@ -80,13 +77,20 @@ function App() {
     <div className="app__container">
       <Header count={count} />
       <div className="new-note__container">
-        <div className="links__container">
-          <Link to="/page">NewPage</Link>
-        </div>
-        <input value={post} className="input__postnumber" data-testid="input__postnumber" onChange={(e) => setPostNumber(e.target.value)} />
         <button className="btn__add-note" onClick={handleNewNote}>
           Add Note
         </button>
+      </div>
+      <div className="new-note__container">
+        <label style={{ color: "whitesmoke" }}>
+          Change this number to fetch a new note:
+        </label>
+        <input
+          value={post}
+          className="input__postnumber"
+          data-testid="input__postnumber"
+          onChange={(e) => setPostNumber(e.target.value)}
+        />
       </div>
       <Notes
         notes={notes}

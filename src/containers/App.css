@@ -2,18 +2,10 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vw;
-  min-width: 100vw;
-  height: 100%;
-  width: 100%;
 }
 
 .input__postnumber {
-  width: 20%;
-}
-
-.links__container {
-  color: white;
+  width: 10%;
 }
 
 .btn__add-note {
@@ -27,7 +19,9 @@
 .new-note__container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
-  background-color: #282c34;
+  height: 4rem;
 }
